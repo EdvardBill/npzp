@@ -10,8 +10,8 @@
  LIBS = 
 --- zapret-71.2.orig/nfq/Makefile
 +++ zapret-71.2/nfq/Makefile
-@@ -1,7 +1,6 @@
- CC ?= cc
+@@ -1,10 +1,9 @@
+ CC ?= 
  OPTIMIZE ?= -Os
 -CFLAGS += -std=gnu99 $(OPTIMIZE) -flto=auto -ffunction-sections -fdata-sections
 +CFLAGS += -std=gnu99 $(OPTIMIZE)
@@ -19,6 +19,9 @@
  CFLAGS_BSD = -Wno-address-of-packed-member
  CFLAGS_CYGWIN = -Wno-address-of-packed-member -static
 -LDFLAGS += -flto=auto
+ LDFLAGS_ANDROID = -Wl,--gc-sections -llog
+ LDFLAGS_BSD = -Wl,--gc-sections
+ LDFLAGS_LINUX = -Wl,--gc-sections
 --- zapret-71.2.orig/nfq/sec.c
 +++ zapret-71.2/nfq/sec.c
 @@ -13,7 +13,7 @@
