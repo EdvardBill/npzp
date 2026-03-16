@@ -106,14 +106,17 @@
  
 --- zapret-71.2.orig/tpws/Makefile
 +++ zapret-71.2/tpws/Makefile
-@@ -1,6 +1,6 @@
+@@ -1,9 +1,8 @@
  CC ?= cc
  OPTIMIZE ?= -Os
 -CFLAGS += -std=gnu99 $(OPTIMIZE) -flto=auto -ffunction-sections -fdata-sections
 +CFLAGS += -std=gnu99 $(OPTIMIZE)
  CFLAGS_SYSTEMD = -DUSE_SYSTEMD
  CFLAGS_BSD = -Wno-address-of-packed-member
- LDFLAGS_ANDROID = -llog
+-LDFLAGS += -flto=auto
+ LDFLAGS_ANDROID = -Wl,--gc-sections -llog
+ LDFLAGS_BSD = -Wl,--gc-sections
+ LDFLAGS_LINUX = -Wl,--gc-sections
 --- zapret-71.2.orig/tpws/sec.c
 +++ zapret-71.2/tpws/sec.c
 @@ -11,7 +11,7 @@
