@@ -5,4 +5,4 @@ New Padavan Zapret Patches (NPZP)
 ## ✨ Что нового?
 - ✅ Исправлена совместимость с zapret 72.12
 
-## [Обсуждение на 4PDA](https://4pda.to/forum/index.php?showtopic=1086380)
+# [Обсуждение на 4PDA](https://4pda.to/forum/index.php?showtopic=1086380)
